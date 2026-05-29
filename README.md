@@ -38,8 +38,8 @@ A lightweight, beautifully crafted icon font for the UAE Dirham (AED) currency s
 
 ```html
 <!-- Add to your <head> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/style.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/fonts/Untitled.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/style.min.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/fonts/font-uae-dirham.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 ```
 
 ### Option 2: NPM (Coming Soon 🚀)
