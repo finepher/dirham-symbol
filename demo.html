@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAE Dirham Icon Font — Demo</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f6f3;--surface:#fff;--border:rgba(0,0,0,.09);--border-strong:rgba(0,0,0,.18);
+  --text:#1a1a1a;--muted:#6b6b6b;--accent:#c4922a;--accent-bg:#fdf3e0;
+  --accent-border:#e6c47a;--green:#1a7a3c;--green-bg:#e8f5ee;
+  --code-bg:#f0ede7;--radius:8px;--radius-lg:12px
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1a1917;--surface:#242220;--border:rgba(255,255,255,.08);--border-strong:rgba(255,255,255,.18);
+  --text:#e8e4dc;--muted:#8a8680;--accent:#dba94a;--accent-bg:#2a2318;
+  --accent-border:#7a5a1a;--green:#4caf72;--green-bg:#162517;
+  --code-bg:#2a2825
+}}
+body{background:var(--bg);color:var(--text);font-family:'Georgia',serif;font-size:15px;line-height:1.6;min-height:100vh;padding:0}
+.page{max-width:780px;margin:0 auto;padding:48px 24px 80px}
+
+h1{font-size:28px;font-weight:400;letter-spacing:-.5px;color:var(--text);margin-bottom:6px}
+.subtitle{color:var(--muted);font-size:14px;font-family:ui-monospace,monospace;letter-spacing:.02em}
+.divider{height:1px;background:var(--border);margin:32px 0}
+
+.section-label{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.glyph-showcase{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;align-items:center;gap:20px;margin-bottom:24px}
+.glyph-big{font-family:'IconFont',sans-serif;font-size:72px;line-height:1;color:var(--accent);user-select:none}
+.glyph-name{font-family:ui-monospace,monospace;font-size:13px;color:var(--muted);background:var(--code-bg);padding:4px 10px;border-radius:4px}
+
+.code-block{position:relative;background:var(--code-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;font-family:ui-monospace,monospace;font-size:13px;line-height:1.7;color:var(--text);overflow-x:auto;margin-bottom:16px}
+.code-block .copy-btn{position:absolute;top:10px;right:10px;background:var(--surface);border:1px solid var(--border-strong);color:var(--muted);border-radius:5px;padding:4px 10px;font-size:12px;font-family:ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:all .2s}
+.code-block .copy-btn:hover{color:var(--text);border-color:var(--accent)}
+.copy-btn.copied{color:var(--green);border-color:var(--green);background:var(--green-bg)}
+
+.tag{display:inline-block;background:var(--accent-bg);border:1px solid var(--accent-border);color:var(--accent);border-radius:4px;padding:2px 8px;font-size:12px;font-family:ui-monospace,monospace}
+em-line{color:var(--accent)}
+
+.steps{display:flex;flex-direction:column;gap:20px;margin-bottom:8px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--accent-border);color:var(--accent);font-size:13px;font-weight:600;font-family:ui-sans-serif,system-ui,sans-serif;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-body{flex:1}
+.step-title{font-weight:600;font-family:ui-sans-serif,system-ui,sans-serif;font-size:14px;margin-bottom:8px;color:var(--text)}
+.step-body p{font-size:14px;color:var(--muted);margin-bottom:10px}
+
+.try-area{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin-bottom:0}
+.try-label{font-size:13px;color:var(--muted);margin-bottom:10px;font-family:ui-sans-serif,system-ui,sans-serif}
+.try-textarea{width:100%;background:var(--code-bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px;font-family:'IconFont',sans-serif;font-size:32px;line-height:1.4;color:var(--text);resize:vertical;min-height:60px;outline:none;transition:border-color .2s}
+.try-textarea:focus{border-color:var(--accent)}
+.try-hint{font-size:12px;color:var(--muted);margin-top:8px;font-family:ui-sans-serif,system-ui,sans-serif}
+
+.note{background:var(--accent-bg);border:1px solid var(--accent-border);border-radius:var(--radius);padding:12px 16px;font-size:13px;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif;margin-bottom:16px}
+.note strong{color:var(--text)}
+
+code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--code-bg);padding:2px 5px;border-radius:3px;color:var(--accent)}
+
+.size-controls{display:flex;gap:8px;align-items:center;margin-bottom:20px;flex-wrap:wrap}
+.size-btn{background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:5px 12px;font-size:13px;font-family:ui-sans-serif,system-ui,sans-serif;color:var(--muted);cursor:pointer;transition:all .2s}
+.size-btn.active,.size-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+
+@font-face{font-family:'IconFont';src:url('fonts/Untitled.woff2') format('woff2');font-display:swap}
+.icon-uae-dirham,.preview-icon{font-family:'IconFont',sans-serif;white-space:pre}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>UAE Dirham Icon Font</h1>
+  <p class="subtitle">icon-uae-dirham · U+F000 · 1 glyph</p>
+
+  <div class="divider"></div>
+
+  <p class="section-label">Preview</p>
+  <div class="glyph-showcase">
+    <div class="glyph-big icon-uae-dirham" id="previewGlyph">&#xf000;</div>
+    <div class="size-controls" id="sizeControls">
+      <span style="font-size:12px;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif;">Size:</span>
+      <button class="size-btn" data-size="24">24px</button>
+      <button class="size-btn" data-size="48">48px</button>
+      <button class="size-btn active" data-size="72">72px</button>
+      <button class="size-btn" data-size="96">96px</button>
+      <button class="size-btn" data-size="128">128px</button>
+    </div>
+    <div class="glyph-name">&#x2022; icon-uae-dirham &nbsp;·&nbsp; &#xf000; &nbsp;·&nbsp; U+F000</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-label">Setup</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <p class="step-title">Link the stylesheet and preload the font</p>
+        <p>Place <code>style.css</code> and the <code>fonts/</code> folder in your project, then add these two lines to your <code>&lt;head&gt;</code>:</p>
+        <div class="code-block">
+<span style="color:var(--muted)">&lt;!-- in &lt;head&gt; --&gt;</span>
+&lt;link rel="stylesheet" href="<em-line>style.css</em-line>"&gt;
+&lt;link rel="preload" href="<em-line>fonts/Untitled.woff2</em-line>" as="font"
+      type="font/woff2" crossorigin="anonymous"&gt;
+          <button class="copy-btn" data-copy='<link rel="stylesheet" href="style.css">
+<link rel="preload" href="fonts/Untitled.woff2" as="font" type="font/woff2" crossorigin="anonymous">'>Copy</button>
+        </div>
+        <div class="note"><strong>Adjust paths</strong> if your CSS file or fonts folder live in a different directory relative to your HTML.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <p class="step-title">Insert the icon in your HTML</p>
+        <p>Apply the class <code>icon-uae-dirham</code> to a <code>&lt;span&gt;</code> and include the Unicode character <code>&#xf000;</code>:</p>
+        <div class="code-block">
+&lt;span class="<em-line>icon-uae-dirham</em-line>"&gt;<em-line>&amp;#xf000;</em-line>&lt;/span&gt;
+          <button class="copy-btn" data-copy='<span class="icon-uae-dirham">&#xf000;</span>'>Copy</button>
+        </div>
+        <p>Add <code>aria-hidden="true"</code> when the icon is decorative (no meaningful text around it):</p>
+        <div class="code-block">
+&lt;span class="icon-uae-dirham" <em-line>aria-hidden="true"</em-line>&gt;&amp;#xf000;&lt;/span&gt;
+          <button class="copy-btn" data-copy='<span class="icon-uae-dirham" aria-hidden="true">&#xf000;</span>'>Copy</button>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <p class="step-title">Size with CSS</p>
+        <p>Control the icon size using <code>font-size</code> in your own CSS — the icon scales with it:</p>
+        <div class="code-block">
+.my-icon {
+  font-size: <em-line>2em</em-line>;    <span style="color:var(--muted)">/* or any px / rem value */</span>
+  color: <em-line>#c4922a</em-line>;  <span style="color:var(--muted)">/* optional color */</span>
+}
+          <button class="copy-btn" data-copy='.my-icon {
+  font-size: 2em;
+  color: #c4922a;
+}'>Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-label">Quick reference</p>
+  <div class="code-block" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px 0;font-size:13px">
+    <span style="color:var(--muted)">Name</span><span style="color:var(--muted)">Unicode</span><span style="color:var(--muted)">HTML entity</span>
+    <span>icon-uae-dirham</span><span>U+F000</span><span>&amp;#xf000;</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-label">Try it</p>
+  <div class="try-area">
+    <p class="try-label">Type or paste text below — it renders using the icon font:</p>
+    <textarea class="try-textarea" aria-label="Font preview textarea" placeholder="Type here…"></textarea>
+    <p class="try-hint">Paste &#xf000; (the private-use character) to see the dirham glyph.</p>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const text=btn.dataset.copy;
+    navigator.clipboard.writeText(text).then(()=>{
+      btn.textContent='✓ Copied';
+      btn.classList.add('copied');
+      setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied')},1400);
+    });
+  });
+});
+
+document.getElementById('sizeControls').addEventListener('click',e=>{
+  const btn=e.target.closest('.size-btn');
+  if(!btn)return;
+  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('previewGlyph').style.fontSize=btn.dataset.size+'px';
+});
+</script>
+</body>
+</html>
