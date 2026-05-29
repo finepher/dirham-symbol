@@ -1,15 +1,15 @@
 @font-face {
-    font-family: "Untitled";
-    src: url("fonts/Untitled.woff2") format("woff2"),
-        url("fonts/Untitled.ttf") format("truetype"),
-        url("fonts/Untitled.woff") format("woff");
+    font-family: "Font-UAE-Dirham";
+    src: url("fonts/font-uae-dirham.woff2") format("woff2"),
+        url("fonts/font-uae-dirham.ttf") format("truetype"),
+        url("fonts/font-uae-dirham.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
-.icon-uae-dirham {
+.font-uae-dirham {
     /* Use !important to prevent extensions from overriding this font. */
-    font-family: "Untitled" !important;
+    font-family: "Font-UAE-Dirham" !important;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -19,4 +19,15 @@
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+.icon-uae-dirham::after {
+    content: "\f000";
+    font-family: "Font-UAE-Dirham";
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: baseline;
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,20 +62,24 @@ code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--code-bg)
 .size-btn{background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:5px 12px;font-size:13px;font-family:ui-sans-serif,system-ui,sans-serif;color:var(--muted);cursor:pointer;transition:all .2s}
 .size-btn.active,.size-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
 
-@font-face{font-family:'IconFont';src:url('fonts/Untitled.woff2') format('woff2');font-display:swap}
-.icon-uae-dirham,.preview-icon{font-family:'IconFont',sans-serif;white-space:pre}
+.icon-uae-dirham::after {
+    content: "\f000";
+    font-family: "Font-UAE-Dirham";
+}
+
 </style>
+<link rel="stylesheet" href="./style.css" type="text/css"/>
 </head>
 <body>
 <div class="page">
   <h1>UAE Dirham Icon Font</h1>
-  <p class="subtitle">icon-uae-dirham · U+F000 · 1 glyph</p>
+  <p class="subtitle">font-uae-dirham · U+F000 · 1 glyph</p>
 
   <div class="divider"></div>
 
   <p class="section-label">Preview</p>
   <div class="glyph-showcase">
-    <div class="glyph-big icon-uae-dirham" id="previewGlyph">&#xf000;</div>
+    <div class="glyph-big font-uae-dirham" id="previewGlyph">&#xf000;</div>
     <div class="size-controls" id="sizeControls">
       <span style="font-size:12px;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif;">Size:</span>
       <button class="size-btn" data-size="24">24px</button>
@@ -85,11 +88,11 @@ code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--code-bg)
       <button class="size-btn" data-size="96">96px</button>
       <button class="size-btn" data-size="128">128px</button>
     </div>
-    <div class="glyph-name">&#x2022; icon-uae-dirham &nbsp;·&nbsp; &#xf000; &nbsp;·&nbsp; U+F000</div>
+    <div class="glyph-name">&#x2022; font-uae-dirham &nbsp;·&nbsp; &#xf000; &nbsp;·&nbsp; U+F000</div>
   </div>
 
   <div class="divider"></div>
-
+<h2>The Fastest way to add and use UAE dirham in your project.</h2>
   <p class="section-label">Setup</p>
   <div class="steps">
     <div class="step">
@@ -99,11 +102,11 @@ code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--code-bg)
         <p>Place <code>style.css</code> and the <code>fonts/</code> folder in your project, then add these two lines to your <code>&lt;head&gt;</code>:</p>
         <div class="code-block">
 <span style="color:var(--muted)">&lt;!-- in &lt;head&gt; --&gt;</span>
-&lt;link rel="stylesheet" href="<em-line>style.css</em-line>"&gt;
-&lt;link rel="preload" href="<em-line>fonts/Untitled.woff2</em-line>" as="font"
+&lt;link rel="stylesheet" href="<em-line>https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/style.css</em-line>"&gt;
+&lt;link rel="preload" href="<em-line>https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/fonts/Untitled.woff2</em-line>" as="font"
       type="font/woff2" crossorigin="anonymous"&gt;
-          <button class="copy-btn" data-copy='<link rel="stylesheet" href="style.css">
-<link rel="preload" href="fonts/Untitled.woff2" as="font" type="font/woff2" crossorigin="anonymous">'>Copy</button>
+          <button class="copy-btn" data-copy='<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/style.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/fonts/Untitled.woff2" as="font" type="font/woff2" crossorigin="anonymous">'>Copy</button>
         </div>
         <div class="note"><strong>Adjust paths</strong> if your CSS file or fonts folder live in a different directory relative to your HTML.</div>
       </div>
@@ -112,15 +115,21 @@ code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--code-bg)
       <div class="step-num">2</div>
       <div class="step-body">
         <p class="step-title">Insert the icon in your HTML</p>
-        <p>Apply the class <code>icon-uae-dirham</code> to a <code>&lt;span&gt;</code> and include the Unicode character <code>&#xf000;</code>:</p>
+        <p>Apply the class <code>font-uae-dirham</code> to a <code>&lt;span&gt;</code> and include the Unicode character <code>&#xf000;</code>:</p>
         <div class="code-block">
-&lt;span class="<em-line>icon-uae-dirham</em-line>"&gt;<em-line>&amp;#xf000;</em-line>&lt;/span&gt;
-          <button class="copy-btn" data-copy='<span class="icon-uae-dirham">&#xf000;</span>'>Copy</button>
+&lt;span class="<em-line>font-uae-dirham</em-line>"&gt;<em-line>&amp;#xf000;</em-line>&lt;/span&gt;
+          <button class="copy-btn" data-copy='<span class="font-uae-dirham">&#xf000;</span>'>Copy</button>
         </div>
+        <p>Or use the <code>icon-uae-dirham</code> class with the pseudo-element approach (generates content automatically):</p>
+        <div class="code-block">
+&lt;span class="<em-line>icon-uae-dirham</em-line>"&gt;&lt;/span&gt;
+          <button class="copy-btn" data-copy='<span class="icon-uae-dirham"></span>'>Copy</button>
+        </div>
+        
         <p>Add <code>aria-hidden="true"</code> when the icon is decorative (no meaningful text around it):</p>
         <div class="code-block">
-&lt;span class="icon-uae-dirham" <em-line>aria-hidden="true"</em-line>&gt;&amp;#xf000;&lt;/span&gt;
-          <button class="copy-btn" data-copy='<span class="icon-uae-dirham" aria-hidden="true">&#xf000;</span>'>Copy</button>
+&lt;span class="<em-line>font-uae-dirham</em-line>" <em-line>aria-hidden="true"</em-line>&gt;&amp;#xf000;&lt;/span&gt;
+          <button class="copy-btn" data-copy='<span class="font-uae-dirham" aria-hidden="true">&#xf000;</span>'>Copy</button>
         </div>
       </div>
     </div>
@@ -148,8 +157,10 @@ code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--code-bg)
   <p class="section-label">Quick reference</p>
   <div class="code-block" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px 0;font-size:13px">
     <span style="color:var(--muted)">Name</span><span style="color:var(--muted)">Unicode</span><span style="color:var(--muted)">HTML entity</span>
-    <span>icon-uae-dirham</span><span>U+F000</span><span>&amp;#xf000;</span>
+    <span>font-uae-dirham</span><span>U+F000</span><span>&amp;#xf000;</span>
   </div>
+
+  <p style="margin-top: 16px; font-size: 13px; color: var(--muted);"><strong>Alternative approach:</strong> Use <code>icon-uae-dirham</code> class (content generated via CSS pseudo-element)</p>
 
   <div class="divider"></div>
 
@@ -157,7 +168,7 @@ code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--code-bg)
   <div class="try-area">
     <p class="try-label">Type or paste text below — it renders using the icon font:</p>
     <textarea class="try-textarea" aria-label="Font preview textarea" placeholder="Type here…"></textarea>
-    <p class="try-hint">Paste &#xf000; (the private-use character) to see the dirham glyph.</p>
+    <p class="try-hint">Paste &#xf000; (the private-use character) to see the dirham glyph. Or use &lt;span class="icon-uae-dirham"&gt;&lt;/span&gt; for the auto-generated version.</p>
   </div>
 </div>
 
