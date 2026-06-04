@@ -2,7 +2,7 @@
 
 A lightweight, beautifully crafted icon font for the UAE Dirham (AED) currency symbol. Perfect for displaying prices in Arabic, Gulf, and Middle Eastern applications.
 
-![Preview](https://img.shields.io/badge/Version-1.0.1-brightgreen) ![License](https://img.shields.io/badge/License-MIT-blue) ![Size](https://img.shields.io/badge/Size-%3C5KB-orange)
+![Preview](https://img.shields.io/badge/Version-1.0.9-brightgreen) ![License](https://img.shields.io/badge/License-MIT-blue) ![Size](https://img.shields.io/badge/Size-%3C5KB-orange)
 
 ---
 
@@ -38,8 +38,8 @@ A lightweight, beautifully crafted icon font for the UAE Dirham (AED) currency s
 
 ```html
 <!-- Add to your <head> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/style.min.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/fonts/font-uae-dirham.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.9/style.min.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.9/fonts/font-uae-dirham.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 ```
 
 ### Option 2: NPM (Coming Soon 🚀)
@@ -420,7 +420,87 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
+## Why use a font instead of SVG?
+
+The Dirham symbol is a **currency character**, not a UI icon.
+
+Using a font provides several advantages when displaying prices throughout an application.
+
+### Smaller HTML
+
+With SVG, every price may require additional markup.
+
+```html
+<svg viewBox="0 0 16 14" fill="none" width="36.571429" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="currentColor" d="M15.8643 6.5957 15.7437 6.4844c-0.1949-0.1856-0.4268-0.2783-0.6773-0.2783l-1.2988 0c0.0185 0.2226 0.0278 0.4453 0.0278 0.6865s-93e-4 0.4638-0.0278 0.6958l0.8813 0c0.668 0 1.2154 0.6308 1.2154 1.4194v0.3526l-0.1206-0.1206c-0.1949-0.1763-0.4268-0.2691-0.6773-0.2691h-1.4936c-0.7144 3.1265-3.21 4.8242-7.1436 4.8242H1.3823c0 0 0.6865-0.5288 0.6865-2.3008l-1e-4-2.5234H1.2246C0.5474 8.9707 0 8.3306 0 7.5513V7.1987l0.1299 0.1114c0.1855 0.1762 0.4175 0.2783 0.668 0.2783l1.2709 0-1e-4-1.3823-0.8443 0C0.5474 6.2061 0 5.5659 0 4.7866V4.4341l0.1299 0.1206c0.1855 0.1763 0.4175 0.269 0.668 0.269l1.2709 0-1e-4-2.4214C2.0689 0.5747 1.3823-5e-4 1.3823-5e-4l5.0469 0c3.8223 0 6.3828 1.6792 7.1343 4.8242l1.0854 0c0.668 0 1.2154 0.6309 1.2154 1.4195zM6.2437 0.686l-2.106 0v4.1377l7.0786 0C10.7339 1.9478 9.0918 0.686 6.2437 0.686zM11.3833 6.8926c0-0.2412-93e-4-0.4639-0.0186-0.6866l-7.227 0v1.3823l7.227 0c93e-4-0.232 0.0186-0.4546 0.0186-0.6958zM4.1377 13.0991h2.1245c3.0151-0.0742 4.4995-1.5215 4.9541-4.1284H4.1377z" />
+</svg>
+```
+so, if you show the icon with 20 products. this html reander 20 times.
+
+With the Dirham font:
+
+```html
+<span class="dh"></span> 
+```
+
+The font file is downloaded once and cached by the browser, while the HTML remains compact.
+
+### Better for Product-Heavy Pages
+
+E-commerce websites often display hundreds of prices on a single page.
+
+A cached font means the browser only needs to load the symbol glyph once, instead of rendering many SVG elements throughout the document.
+
+### Behaves Like Text
+
+The symbol:
+
+- Aligns naturally with numbers
+- Inherits font size
+- Inherits text color
+- Scales with typography
+- Works with line-height and text layouts
+
+```html
+<span class="price">
+  <span class="dh"></span> 
+</span>
+```
+
+### Simple Integration
+
+Just include the stylesheet:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/finepher/dirham-symbol@v1.0.1/style.min.css"
+/>
+```
+
+and use:
+
+```html
+<span class="dh"></span>
+```
+
+No SVG imports, React components, build plugins, or asset pipelines required.
+
+### Cached Across Pages
+
+Once loaded, the font can be reused across the entire website.
+
+For stores displaying prices on every page, the symbol becomes a shared cached asset.
+
+### Best Use Case
+
+While SVG is excellent for icons, logos, and illustrations, a currency symbol behaves more like a character than an icon.
+
+For displaying UAE Dirham prices throughout a website or application, a lightweight font-based implementation provides a simple, text-friendly, and cache-efficient solution.
+
+
 ## 🎉 Changelog
+
+### v1.0.9
 
 ### v1.0.1
 - ⚡ **Performance Optimization** - Further reduced font file size and improved loading times
